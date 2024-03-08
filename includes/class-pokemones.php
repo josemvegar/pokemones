@@ -78,6 +78,7 @@ class Pokemones {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+		add_action('admin_menu', array( 'Pokemones_MenuAdmin', 'jmAddMenuItem' ));
 
 	}
 
@@ -121,6 +122,11 @@ class Pokemones {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-pokemones-public.php';
+
+		/**
+		 * The class responsible for showing the option in wordpress menu.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-pokemones-admin-menu.php';
 
 		$this->loader = new Pokemones_Loader();
 
@@ -166,7 +172,7 @@ class Pokemones {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function define_public_hooks() {
+	private function define_public_hooks() { 
 
 		$plugin_public = new Pokemones_Public( $this->get_plugin_name(), $this->get_version() );
 
