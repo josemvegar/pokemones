@@ -128,6 +128,11 @@ class Pokemones {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-pokemones-admin-menu.php';
 
+		/**
+		 * The class responsible for listing pokemones in admin page.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-listing-pokemon.php';
+
 		$this->loader = new Pokemones_Loader();
 
 	}
