@@ -38,6 +38,7 @@ class Pokemones_MenuAdmin {
     public static function jmOptionsPokemones(){
 
         $listing= new listingPokemon;
+        $shortcodes= new listingShortCodes;
 
         ?> 
         
@@ -74,26 +75,11 @@ class Pokemones_MenuAdmin {
 
                     <!-- sidebar -->
                     <div id="postbox-container-1" class="postbox-container">
-                        <div class="meta-box-sortables">
-                            <div class="postbox">
-                                <h2><span><?php esc_attr_e(
-                                            'Shordcodes para mostrar pokemones.', 'pokemones'
-                                        ); ?></span></h2>
-                                <div class="inside">
-                                    <table class="widefat">
-                                        <tr>
-                                            <td class="row-title"><label for="tablecell"><?php esc_attr_e( '[pokemon_type_agua]', 'pokemones' ); ?></label></td>
-                                        </tr>
-                                        <tr class="alternate">
-                                            <td class="row-title"><label for="tablecell"><?php esc_attr_e( '[pokemon_type_agua]', 'pokemones' ); ?></label></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="row-title"><label for="tablecell"><?php esc_attr_e( '[pokemon_type_agua]', 'pokemones' ); ?></label></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        
+                            $shortcodes->listingTypes();
+                        
+                        ?>
                     </div>
                 </div>
                 <br class="clear">

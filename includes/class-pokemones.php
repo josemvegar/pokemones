@@ -133,6 +133,11 @@ class Pokemones {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-listing-pokemon.php';
 
+		/**
+		 * The class responsible for listing shortcodes in admin page.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-listing-shortcodes.php';
+
 		$this->loader = new Pokemones_Loader();
 
 	}

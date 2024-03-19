@@ -5,3 +5,9 @@
  .poke-admin-image img {
     width: 50px;
 }
+td.row-title.pokeshortcode {
+    cursor: pointer;
+}
+p{
+    padding: 8px 12px;
+}

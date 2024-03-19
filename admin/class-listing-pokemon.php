@@ -40,6 +40,10 @@
     }
 
     public static function listingPokemon($url="https://pokeapi.co/api/v2/pokemon?offset=0&limit=50"){
+        if(isset($_POST['pagination_url'])){
+            $url=$_POST['pagination_url'];
+            //echo $_POST['pagination_url'];
+        }
         $datapi= self::apiConection($url);
         $data= json_decode($datapi,true);
         ?>
@@ -82,11 +86,20 @@
         <!-- Pagination -->
         <div class="tablenav">
             <div class="tablenav-pages">
-                <a class='prev-page disabled' title='Go to previous page' href='#'>&lsaquo;</a>
-                <a class='next-page' title='Go to next page' href='<?php echo /*menu_page_url( 'pk_options', true ) . */'admin.php?page=pk_options&page=next'; ?>'>&rsaquo;</a>
+                <?php if (!empty($data["previous"])): ?>
+                    <a class='prev-page' title='Go to previous page' href='#' onclick="submitForm(`<?php echo $data['previous']; ?>`)">&lsaquo;</a>
+                <?php else: ?>
+                    <a class='prev-page disabled' title='No previous page available' href='#'>&lsaquo;</a>
+                <?php endif; ?>
+                
+                <?php if (!empty($data["next"])): ?>
+                    <a class='next-page' title='Go to next page' href='#' onclick="submitForm(`<?php echo $data['next']; ?>`)">&rsaquo;</a>
+                <?php else: ?>
+                    <a class='next-page disabled' title='No next page available' href='#'>&rsaquo;</a>
+                <?php endif; ?>
             </div>
         </div>
-
+        
         <?php
 
     }
