@@ -48,11 +48,14 @@
                 <p><span><?php esc_attr_e(
                             'Haz click sobre un shortcode para copiar.', 'pokemones'
                         ); ?></span></p>
+                <p><span><?php esc_attr_e(
+                            'El limite de pokemones a mostrar puede ser cambiado.', 'pokemones'
+                        ); ?></span></p>
                 <div class="inside">
                 <table class="widefat">
                         <?php
                             foreach ($data["results"] as $i => $result): 
-                                $pokemon_type = "[pokemon_type_" . $result["name"] . "]";
+                                $pokemon_type = "[pokemon_type type='" . $result["name"] . "' limit='10']";
                         ?>
                                 <tr class="<?php echo ($i%2!=0) ?  "alternate" : "" ; ?>">
                                     <td class="row-title pokeshortcode"><?php esc_attr_e($pokemon_type, 'pokemones' ); ?></td>

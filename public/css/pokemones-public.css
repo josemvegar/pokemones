@@ -2,3 +2,19 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+ .pokemonItem {
+    display: flex; /* Utilizar flexbox para colocar los elementos uno al lado del otro */
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+
+.pokemonImage img {
+    width: 50px; /* Establecer el ancho de la imagen */
+}
+
+.pokemonName {
+    margin-left: 10px; /* Agregar un margen izquierdo entre la imagen y el nombre */
+}
+.pokemonName {
+    font-size: 18px;
+    font-weight: 500;
+}
